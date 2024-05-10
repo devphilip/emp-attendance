@@ -1,0 +1,19 @@
+insert into department (id, name) values
+(1, 'HR'),
+(2, 'IT'),
+(3, 'Sales'),
+(4, 'Marketing');
+
+insert into employee (id, staff_id, password, first_name, last_name, email, phone, address, gender, department_id) values
+            (1, 'emp-1', 'emp-1', 'John', 'Doe', 'DcQoG@example.com', '1234567890', '123 Main St', 'Male', 1),
+            (2, 'emp-2', 'emp-2', 'Jane', 'Doe', 'DcQoG@example.com', '1234567890', '123 Main St', 'Female', 2),
+            (3, 'emp-3', 'emp-3', 'Bob', 'Smith', 'DcQoG@example.com', '1234567890', '123 Main St', 'Male', 3),
+            (4, 'emp-4', 'emp-4', 'Alice', 'Johnson', 'DcQoG@example.com', '1234567890', '123 Main St', 'Female', 4)
+            (5, 'emp-5', 'emp-5', 'Mike', 'Brown', 'DcQoG@example.com', '1234567890', '123 Main St', 'Male', 1),
+            (6, 'emp-6', 'emp-6', 'Sarah', 'Davis', 'DcQoG@example.com', '1234567890', '123 Main St', 'Female', 2),
+            (7, 'emp-7', 'emp-7', 'Tom', 'Wilson', 'DcQoG@example.com', '1234567890', '123 Main St', 'Male', 3),
+            (8, 'emp-8', 'emp-8', 'Emily', 'Taylor', 'DcQoG@example.com', '1234567890', '123 Main St', 'Female', 4)
+            (9, 'emp-9', 'emp-9', 'Mark', 'Anderson', 'DcQoG@example.com', '1234567890', '123 Main St', 'Male', 1),
+            (10, 'emp-10', 'emp-10', 'Olivia', 'Thomas', 'DcQoG@example.com', '1234567890', '123 Main St', 'Female', 2),
+            (11, 'emp-11', 'emp-11', 'William', 'Jackson', 'DcQoG@example.com', '1234567890', '123 Main St', 'Male', 3),
+            (12, 'emp-12', 'emp-12', 'Sophia', 'White', 'DcQoG@example.com', '1234567890', '123 Main St', 'Female', 4);

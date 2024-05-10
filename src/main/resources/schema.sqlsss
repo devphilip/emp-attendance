@@ -1,0 +1,21 @@
+create table department
+(
+    id   int8 not null,
+    name varchar(255),
+    primary key (id)
+);
+
+create table employee
+(
+    id         int8 not null,
+    staff_id   varchar(255),
+    password   varchar(255),
+    first_name varchar(255),
+    last_name  varchar(255),
+    email      varchar(255),
+    phone      varchar(20),
+    address    varchar(255),
+    gender     varchar(20),
+    department_id int8,
+    primary key (id)
+);
