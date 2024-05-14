@@ -2,10 +2,7 @@ package com.devphilip.empattendance.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,6 +10,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "department")
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Department {
@@ -25,7 +23,4 @@ public class Department {
     @JsonBackReference
     private List<Employee> employees;
 
-    public Department(String name) {
-        this.name = name;
-    }
 }

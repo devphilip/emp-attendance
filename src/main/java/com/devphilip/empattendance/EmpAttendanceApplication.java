@@ -1,5 +1,6 @@
 package com.devphilip.empattendance;
 
+import com.devphilip.empattendance.constant.EmployeeClass;
 import com.devphilip.empattendance.model.Department;
 import com.devphilip.empattendance.model.Employee;
 import com.devphilip.empattendance.repository.DepartmentRepository;
@@ -25,20 +26,21 @@ public class EmpAttendanceApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Department hr = departmentRepository.save(new Department("HR"));
-		Department it = departmentRepository.save(new Department("IT"));
-		Department sales = departmentRepository.save(new Department("Sales"));
-		Department marketing = departmentRepository.save(new Department("Marketing"));
+		Department hr = departmentRepository.save(Department.builder().name("HR").build());
+		Department it = departmentRepository.save(Department.builder().name("IT").build());
+		Department sales = departmentRepository.save(Department.builder().name("Sales").build());
+		Department marketing = departmentRepository.save(Department.builder().name("Marketing").build());
+		Department labs = departmentRepository.save(Department.builder().name("Labs").build());
+		Department theatre = departmentRepository.save(Department.builder().name("Theatre").build());
 
-		employeeRepository.save(new Employee("EMP01", "EMP01",  "John", "Doe", "a@a.com", "123456", "123 Main St", "Male", hr));
-		employeeRepository.save(new Employee("EMP02", "EMP02",  "Jane", "Doe", "b@b.com", "123456", "123 Main St", "Female", it));
-		employeeRepository.save(new Employee("EMP03", "EMP03",  "Jack", "Doe", "c@c.com", "123456", "123 Main St", "Male", sales));
-		employeeRepository.save(new Employee("EMP04", "EMP04",  "Jill", "Doe", "d@d.com", "123456", "123 Main St", "Female", marketing));
-		employeeRepository.save(new Employee("EMP05", "EMP05",  "James", "Bower", "e@e.com", "123456", "123 Main St", "Male", hr));
-		employeeRepository.save(new Employee("EMP06", "EMP06",  "Jenny", "Bower", "f@f.com", "123456", "123 Main St", "Female", it));
-		employeeRepository.save(new Employee("EMP07", "EMP07",  "Jim", "Bower", "g@g.com", "123456", "123 Main St", "Male", sales));
-		employeeRepository.save(new Employee("EMP08", "EMP08",  "Jenny", "Bower", "h@h.com", "123456", "123 Main St", "Female", marketing));
-
+		employeeRepository.save(Employee.builder().staffId("EMP01").password("EMP01").firstName("John").lastName("Doe").email("a@a.com").phone("123456").address("123 Main St").gender("Male").department(hr).employeeClass(EmployeeClass.NON_MEDICAL.name()).build());
+		employeeRepository.save(Employee.builder().staffId("EMP02").password("EMP02").firstName("Jane").lastName("Doe").email("b@b.com").phone("123456").address("123 Main St").gender("Female").department(it).employeeClass(EmployeeClass.NON_MEDICAL.name()).build());
+		employeeRepository.save(Employee.builder().staffId("EMP03").password("EMP03").firstName("Jack").lastName("Doe").email("c@c.com").phone("123456").address("123 Main St").gender("Male").department(sales).employeeClass(EmployeeClass.NON_MEDICAL.name()).build());
+		employeeRepository.save(Employee.builder().staffId("EMP04").password("EMP04").firstName("Jill").lastName("Doe").email("d@d.com").phone("123456").address("123 Main St").gender("Female").department(marketing).employeeClass(EmployeeClass.NON_MEDICAL.name()).build());
+		employeeRepository.save(Employee.builder().staffId("EMP05").password("EMP05").firstName("James").lastName("Bower").email("e@e.com").phone("123456").address("123 Main St").gender("Male").department(hr).employeeClass(EmployeeClass.NON_MEDICAL.name()).build());
+		employeeRepository.save(Employee.builder().staffId("EMP06").password("EMP06").firstName("Jill").lastName("Doe").email("f@f.com").phone("123456").address("123 Main St").gender("Female").department(it).employeeClass(EmployeeClass.NON_MEDICAL.name()).build());
+		employeeRepository.save(Employee.builder().staffId("EMP07").password("EMP07").firstName("Jack").lastName("Doe").email("g@g.com").phone("123456").address("123 Main St").gender("Male").department(sales).employeeClass(EmployeeClass.NON_MEDICAL.name()).build());
+		employeeRepository.save(Employee.builder().staffId("EMP08").password("EMP08").firstName("Jane").lastName("Doe").email("h@h.com").phone("123456").address("123 Main St").gender("Female").department(marketing).employeeClass(EmployeeClass.NON_MEDICAL.name()).build());
 	}
 
 }

@@ -3,6 +3,7 @@ package com.devphilip.empattendance.controller;
 import com.devphilip.empattendance.model.Department;
 import com.devphilip.empattendance.dto.DepartmentDto;
 import com.devphilip.empattendance.service.DepartmentService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class DepartmentController {
     private final DepartmentService departmentService;
 
     @PostMapping
-    public ResponseEntity<?> addDepartment(@RequestBody DepartmentDto departmentDto, UriComponentsBuilder urlBuilder) {
+    public ResponseEntity<?> addDepartment(@RequestBody @Valid DepartmentDto departmentDto, UriComponentsBuilder urlBuilder) {
         Department department = departmentService.addDepartment(departmentDto);
         UriComponents uriComponents = urlBuilder.path("/departments/{id}").buildAndExpand(department.getId());
         return ResponseEntity.created(uriComponents.toUri()).body("Department added successfully");
